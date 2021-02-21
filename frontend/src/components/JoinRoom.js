@@ -37,7 +37,7 @@ export default class JoinRoom extends Component {
             })
         }
 
-        fetch('/api/rooms/join/', requestOptions)
+        fetch('/api/room/join/', requestOptions)
             .then((response) => {
                 if (response.ok) {
                     this.props.history.push(`/room/${this.state.roomCode}`)

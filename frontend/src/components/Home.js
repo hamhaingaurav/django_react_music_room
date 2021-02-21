@@ -15,7 +15,7 @@ import {
     Typography
 } from '@material-ui/core'
 
-import CreateRoom from './CreateRoom'
+import CreateUpdateRoom from './CreateUpdateRoom'
 import JoinRoom from './JoinRoom'
 import Room from './Room'
 
@@ -30,7 +30,7 @@ export default class Home extends Component {
     }
 
     async componentDidMount() {
-        fetch('/api/rooms/check_user_in_room/')
+        fetch('/api/room/check_user_in_room/')
             .then((response) => response.json())
             .then((data) => {
                 this.setState({
@@ -94,7 +94,7 @@ export default class Home extends Component {
                     <Route
                         exact
                         path='/room/create'
-                        component={CreateRoom}
+                        component={CreateUpdateRoom}
                     />
                     <Route
                         exact
